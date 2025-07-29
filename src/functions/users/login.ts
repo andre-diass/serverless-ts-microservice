@@ -9,6 +9,7 @@ export const handler: APIGatewayProxyHandler = async event => {
   const user = new UserService();
 
   const result = await user.login(accountID, userID);
+  console.log('teste');
 
   if (result.error) {
     const response = buildResponse.buildErrorResponse(ClientErrorCodes.NotFound, 'NotFound');
